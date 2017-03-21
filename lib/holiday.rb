@@ -18,7 +18,7 @@ def second_supply_for_fourth_of_july(holiday_hash)
   #   }
   # }
   # return the second element in the 4th of July array
-return holiday_supplies[:summer][:fourth_of_july][1]
+return holiday_hash[:summer][:fourth_of_july][1]
 end
 
 def add_supply_to_winter_holidays(holiday_hash, supply)
@@ -44,9 +44,8 @@ holiday_hash
 end
 
 def all_winter_holiday_supplies(holiday_hash)
-  holiday_supplies[:winter].map do |holiday, supplies|
-    supplies
-  end.flatten #what is happening here?
+  holiday_hash[:winter].values.flatten
+  #get all the values for the keys in winter and put them in a new array
 end
 
 def all_supplies_in_holidays(holiday_hash)
@@ -77,20 +76,16 @@ def all_supplies_in_holidays(holiday_hash)
 end
 
 def all_holidays_with_bbq(holiday_hash)
-  holiday_hash.collect do |seasons, holidays|
-    #iterate thru the holiday_hash, checking each season and their holidays
-    holidays.collect do |holiday, supplies|
-      #iterate thru each holiday and their supplies
-      holiday if supplies.include?("BBQ")
-      #holiday if is like "return the holidays in they include"
-      #each holiday and check if the supplies include BBQ
-    end
-  end.flatten.compact #what is happening here?
+  holidays_bbq = []
+  #make a new array
+ holiday_hash.keys.each do |season|
+   #iterate over the keys(seasons) in your holiday_hash.
+   holiday_hash[season].each do |key, value|
+     #iterate over inner hash where season is the key, value are the supplies.
+     holidays_bbq << key if value.include? 'BBQ'
+     #add the key to the new array if the values of that key include "BBQ"
+   end
+ end
+ holidays_bbq
+ #return the new array which includes all the keys that had values of BBQ
 end
-
-    #if the holiday's supplies includes the string of "BBQ"
-    #then return an array of the holidays that
-
-
-  # return an array of holiday names (as symbols) where supply lists
-  # include the string "BBQ"

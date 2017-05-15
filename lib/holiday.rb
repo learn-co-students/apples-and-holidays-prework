@@ -52,7 +52,17 @@ def all_winter_holiday_supplies(holiday_hash)
   end
   all_winter.flatten
 end
+=begin --------------------------------------------------------
+# all_winter_holiday_supplies refactored with map
 
+def all_winter_holiday_supplies_2(holiday_hash)
+  holiday_hash[:winter].map do |holiday_name, supply_array|
+    supply_array
+  end
+  .flatten
+end
+----------------------------------------------------------------
+=end
 def all_supplies_in_holidays(holiday_hash)
   # iterate through holiday_hash and print items such that your readout resembles:
   # Winter:
@@ -68,6 +78,7 @@ def all_supplies_in_holidays(holiday_hash)
    end
  end
 end
+
 def all_holidays_with_bbq(holiday_hash)
   # return an array of holiday names (as symbols) where supply lists
   # include the string "BBQ"
@@ -81,3 +92,20 @@ def all_holidays_with_bbq(holiday_hash)
   end
   bbq_array
 end
+
+=begin
+#all_holidays_with_bbq REFACTORED WITH MAP -------------------------------------------
+
+def all_holidays_with_bbq_2(holiday_hash)
+  holiday_hash.map do |season, holiday_and_supplies|
+    holiday_and_supplies.map do  |holiday_name, supply_array|
+      if supply_array.include?("BBQ")
+        holiday_name
+      end
+    end
+  end
+  .flatten.compact
+end
+
+----------------------------------------------------------------
+=end

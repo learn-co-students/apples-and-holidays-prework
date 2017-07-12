@@ -40,16 +40,34 @@ end
 ```
 
 * Write a method that adds a supply to both Winter holidays.
+```ruby
+def add_supply_to_winter_holidays(holiday_supplies, new_supply)
+  holiday_supplies.each do |season, holiday|
+    if season=="winter"
+  end
+end
 
+```
 * Write a method that adds a supply to Memorial Day.
+```ruby 
+
+```
 
 * Write a method that adds a new holiday and its associated supplies to any season.
+```ruby 
+
+```
+
 
 * Write a method to collect all Winter supplies from all the winter holidays. For eg:
 
 ```bash
 winter_supplies(holiday_supplies) #=> ["Lights", "Wreath", etc]
 ```
+```ruby 
+
+```
+
 
 * Write a method that uses a loop to list out all the supplies you have for each holiday and the season. Use string manipulation to get your output to match what the test is expecting.
 

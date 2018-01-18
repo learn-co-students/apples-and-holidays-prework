@@ -1,4 +1,4 @@
-require 'pry'
+ require 'pry'
 
 def second_supply_for_fourth_of_july(holiday_hash)
   # given that holiday_hash looks like this:
@@ -23,8 +23,9 @@ end
 
 def add_supply_to_winter_holidays(holiday_hash, supply)
 
- holiday_hash[:winter][:christmas].push(supply)
- holiday_hash[:winter][:new_years].push(supply)
+  holiday_hash[:winter].each do |holiday, supplies|
+   supplies.push(supply)
+  end 
  end 
 
 

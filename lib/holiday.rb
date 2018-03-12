@@ -38,7 +38,7 @@ end
 def add_new_holiday_with_supplies(holiday_hash, season, holiday_name, supply_array)
   # code here
   # remember to return the updated hash
-  holiday_hash[season] = {holiday_name => supply_array}
+  holiday_hash[season][holiday_name] = supply_array
   holiday_hash
 end
 
@@ -67,14 +67,12 @@ end
 def all_holidays_with_bbq(holiday_hash)
   # return an array of holiday names (as symbols) where supply lists
   # include the string "BBQ"
-  output = []
   holiday_hash.collect do |season, holidays|
     holidays.collect do |holiday, supplies|
       if supplies.include? "BBQ"
         output.push(holiday)
       end
     end
-  end
-  output
+  end.flatten.compact
 end
 

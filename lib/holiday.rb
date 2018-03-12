@@ -70,7 +70,7 @@ def all_holidays_with_bbq(holiday_hash)
   holiday_hash.collect do |season, holidays|
     holidays.collect do |holiday, supplies|
       if supplies.include? "BBQ"
-        output.push(holiday)
+        holiday
       end
     end
   end.flatten.compact

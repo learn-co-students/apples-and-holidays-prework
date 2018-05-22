@@ -17,7 +17,7 @@ def second_supply_for_fourth_of_july(holiday_hash)
   #     :memorial_day => ["BBQ"]
   #   }
   # }
-  holiday_hash[:summer][:fourth_of_july][2]
+  holiday_hash[:summer][:fourth_of_july][1]
   end
 
 def add_supply_to_winter_holidays(holiday_hash, supply)
@@ -55,7 +55,7 @@ def all_supplies_in_holidays(holiday_hash)
         new_value.push(value.capitalize!)
       end
       puts "  #{new_value.join(" ")}: #{items.join(", ")}"
-    end 
+    end
   end
 end
 

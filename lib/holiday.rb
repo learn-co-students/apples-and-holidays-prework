@@ -43,7 +43,7 @@ end
 
 
 def add_new_holiday_with_supplies(holiday_supplies, season, holiday_name, supply_array)
-  holiday_supplies[:fall][:columbus_day] columbus_day_supplies
+  holiday_supplies[season][holiday_name]= supply_array
 end
 
 

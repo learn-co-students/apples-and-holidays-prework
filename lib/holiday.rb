@@ -65,7 +65,9 @@ end
 def all_holidays_with_bbq(holiday_hash)
   # return an array of holiday names (as symbols) where supply lists
   # include the string "BBQ"
-holiday_hash.each
+  have = []
+holiday_hash.each{|x,y| have.push(x) if y.include?("BBQ")}
+have
 end
 
 

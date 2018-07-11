@@ -46,8 +46,8 @@ end
 def all_winter_holiday_supplies(holiday_hash)
   # return an array of all of the supplies that are used in the winter season
   supplies_array = []
-  holiday_hash[:winter].collect do |value|
-    supplies_array << value
+  holiday_hash[:winter].collect do |holiday, supplies|
+    supplies_array << supplies
   end
   supplies_array.flatten
 end
@@ -61,15 +61,14 @@ def all_supplies_in_holidays(holiday_hash)
   #   Fourth Of July: Fireworks, BBQ
   # etc.
   
-  holiday_hash.each do |season, holiday|
+  holiday_hash.each do |season, holidays|
     puts "#{season.to_s.capitalize!}:"
-    holiday.each do |holiday, supplies|
+    holidays.each do |holiday, supplies|
       words_array = []
       holiday.to_s.split("_").each do |word|
         words_array << word.capitalize!
       end
-      supplies = supplies.join(", ")
-      puts "  #{words_array.join(" ")}: #{supplies}"
+      puts "  #{words_array.join(" ")}: #{supplies.join(", ")}"
     end
   end
 end
@@ -78,8 +77,8 @@ def all_holidays_with_bbq(holiday_hash)
   # return an array of holiday names (as symbols) where supply lists
   # include the string "BBQ"
   bbq_holidays = []
-  holiday_hash.each do |season, holiday|
-    holiday.each do |holiday, supplies| 
+  holiday_hash.each do |season, holidays|
+    holidays.each do |holiday, supplies| 
       supplies.each do |supply|
         if supply == "BBQ"
           bbq_holidays << holiday

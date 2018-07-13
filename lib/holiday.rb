@@ -79,8 +79,7 @@ def all_supplies_in_holidays(holiday_hash)
     holiday.each do |list, event|
         temp = list.to_s.split("_")
 
-        puts "  " + list.to_s.split("_").map { |x| x.capitalize }.join(" ") + 
-        ": " + event.to_a.join(", ") 
+        puts "  " + list.to_s.split("_").map { |x| x.capitalize }.join(" ") + ": " + event.to_a.join(", ") 
     end
 end
 end

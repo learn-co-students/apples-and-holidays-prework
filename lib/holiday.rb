@@ -84,7 +84,7 @@ def all_holidays_with_bbq(holiday_hash)
 
   
     holiday_hash.each do |season, hash_of_seasonal_holidays|
-      hash_of_seasonal_holidays.select(hash_of_seasonal_holidays.values.include?("BBQ")).keys
+      hash_of_seasonal_holidays.values.include?("BBQ").keys
         
          
     

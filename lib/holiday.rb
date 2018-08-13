@@ -57,11 +57,15 @@ def all_supplies_in_holidays(holiday_hash)
   # Summer:
   #   Fourth Of July: Fireworks, BBQ
   # etc.
+  #OG: to change a key from "rest" to "west", this is what you do:
+  #OG: usa_regions["west"] = usa_regions.delete("rest")
   
-  holiday_hash.collect do |season, hash_of_seasonal_holidays|
-    season.capitalize
-    
-    
+   holiday_hash.collect do |season, holiday_hash|
+     season.to_s.capitalize
+     holiday_hash.collect do |holiday_name, array_of_supplies
+       holiday_name.to_s.split("_").collect.capitalize!.join(" ")
+       
+       # this.split.map { |x| x.capitalize }.join(" ")
 end
 
 

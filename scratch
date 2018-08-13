@@ -25,3 +25,17 @@ def add_new_holiday_with_supplies(holiday_hash, season, holiday_name, supply_arr
   holiday_hash[season][holiday_name] = supply_array
 end
  
+ 
+ 
+ 
+ #This:
+ def all_holidays_with_bbq(holiday_hash)
+    holiday_hash.each do |hash_of_seasonal_holidays, hash_of_holiday_names|
+      hash_of_seasonal_holidays.select do |hash_of_holiday_names, supply_array|
+        supply_array.include?("BBQ")
+      end 
+    end 
+end
+ #results in:
+ #NoMethodError:
+       private method `select' called for :winter:Symbol"

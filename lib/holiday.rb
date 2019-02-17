@@ -42,9 +42,16 @@ def all_winter_holiday_supplies(holiday_hash)
 end
 
 def all_supplies_in_holidays(holiday_hash)
+  # interate through hash by entering first level... season = :winter, holiday_data = the holidays in winter and the decorations for each 
   holiday_hash.each do | season, holiday_data |
-    binding.pry 
+    season_list = season.length 
+    counter = 0 
+    until season_list == season.length - 1 
+    season.to_s
+    counter += 1 
+   end
   end
+end
     
   
   # iterate through holiday_hash and print items such that your readout resembles:
@@ -54,14 +61,12 @@ def all_supplies_in_holidays(holiday_hash)
   # Summer:
   #   Fourth Of July: Fireworks, BBQ
   # etc.
-  # holiday_hash.map do |  |
-  #   block
   
-end
+  
 
 def all_holidays_with_bbq(holiday_hash)
-  # return an array of holiday names (as symbols) where supply lists
-#  interate through hash by entering first level... season = :winter, holiday_data = the holidays in winter and the decorations for each 
+# return an array of holiday names (as symbols) where supply lists
+ # interate through hash by entering first level... season = :winter, holiday_data = the holidays in winter and the decorations for each 
  holiday_hash.each do | season, holiday_data |
   
    holiday_data.each do | k, v | 

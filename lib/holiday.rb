@@ -42,6 +42,7 @@ def all_winter_holiday_supplies(holiday_hash)
 end
 
 def all_supplies_in_holidays(holiday_hash)
+  holiday_hash.each do | season, holiday_data |
   # iterate through holiday_hash and print items such that your readout resembles:
   # Winter:
   #   Christmas: Lights, Wreath
@@ -58,32 +59,13 @@ end
 
 def all_holidays_with_bbq(holiday_hash)
   # return an array of holiday names (as symbols) where supply lists
+#  interate through hash by entering first level... season = :winter, holiday_data = the holidays in winter and the decorations for each 
 holiday_hash.each do | season, holiday_data |
+  
   holiday_data.each do | k, v | 
-    binding.pry
   end
  end 
   # %w{apple pear fig}.sort_by { |word| word.length}
 end
 
- # given that holiday_hash looks like this:
-  # {
-  #   :winter => {
-  #     :christmas => ["Lights", "Wreath"],
-  #     :new_years => ["Party Hats"]
-  #   },
-  #   :summer => {
-  #     :fourth_of_july => ["Fireworks", "BBQ"]
-  #   },
-  #   :fall => {
-  #     :thanksgiving => ["Turkey"]
-  #   },
-  #   :spring => {
-  #     :memorial_day => ["BBQ"]
-  #   } 
-  # }
-
-
-
-
-
+ 

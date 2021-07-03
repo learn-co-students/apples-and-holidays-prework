@@ -1,0 +1,55 @@
+def add_supply_to_winter_holidays(holiday_hash, supply)
+  holiday_hash[:winter][:christmas][2] = supply 
+  holiday_hash[:winter][:new_years][1] = supply 
+end
+
+def add_supply_to_winter_holidays(holiday_hash, supply)
+  holiday_hash.each do |season, hash_of_seasonal_holidays|
+    if season == :winter 
+      hash_of_seasonal_holidays.each do |holiday, array_of_supplies|
+          array_of_supplies << supply 
+        end 
+        hash_of_seasonal_holidays
+    end
+    :winter 
+  end 
+end
+
+def add_supply_to_memorial_day(holiday_hash, supply)
+  holiday_hash[:spring][:memorial_day][1] = supply 
+end
+
+def add_new_holiday_with_supplies(holiday_hash, season, holiday_name, supply_array)
+  # code here
+  # remember to return the updated hash
+  holiday_hash[season][holiday_name] = supply_array
+end
+ 
+ 
+ 
+ 
+ #This:
+ def all_holidays_with_bbq(holiday_hash)
+    holiday_hash.each do |hash_of_seasonal_holidays, hash_of_holiday_names|
+      hash_of_seasonal_holidays.select do |hash_of_holiday_names, supply_array|
+        supply_array.include?("BBQ")
+      end 
+    end 
+end
+ #results in:
+ #NoMethodError:
+       private method `select' called for :winter:Symbol"
+       
+       
+# EUREKA
+def all_holidays_with_bbq(holiday_hash)
+  end_array = []
+    holiday_hash.each do |hash_of_seasons, hash_of_seasonal_holidays|
+      hash_of_seasonal_holidays.each do |hash_of_holiday_names, supply_array|
+        if supply_array.include?("BBQ")
+          end_array << hash_of_holiday_names
+        end
+      end 
+    end 
+    end_array
+end

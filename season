@@ -1,0 +1,29 @@
+
+[1mFrom:[0m /home/mvassaramo/apples-and-holidays-prework/lib/holiday.rb @ line 115 Object#all_holidays_with_bbq:
+
+    [1;34m108[0m: [32mdef[0m [1;34mall_holidays_with_bbq[0m(holiday_hash)
+    [1;34m109[0m:   [1;34m# return an array of holiday names (as symbols) where supply lists[0m
+    [1;34m110[0m:   [1;34m# include the string "BBQ"[0m
+    [1;34m111[0m: bbq_holidays = []
+    [1;34m112[0m: 
+    [1;34m113[0m: holiday_hash.each [32mdo[0m |season, data|
+    [1;34m114[0m: 
+ => [1;34m115[0m: binding.pry 
+    [1;34m116[0m: 
+    [1;34m117[0m: data.each [32mdo[0m |holiday, supplies|
+    [1;34m118[0m: 
+    [1;34m119[0m:   [32mif[0m supplies == [31m[1;31m"[0m[31mBBQ[1;31m"[0m[31m[0m
+    [1;34m120[0m:     
+    [1;34m121[0m:     bbq_holidays << holiday 
+    [1;34m122[0m: 
+    [1;34m123[0m: [32mend[0m 
+    [1;34m124[0m: 
+    [1;34m125[0m: [32mend[0m
+    [1;34m126[0m: 
+    [1;34m127[0m: [32mend[0m 
+    [1;34m128[0m: 
+    [1;34m129[0m: 
+    [1;34m130[0m: 
+    [1;34m131[0m: 
+    [1;34m132[0m:  [32mend[0m 
+
